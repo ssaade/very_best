@@ -1,6 +1,6 @@
 class FoodTypesController < ApplicationController
   def index
-    @food_types = FoodType.all
+    @food_types = FoodType.page(params[:page]).per(10)
 
     render("food_types/index.html.erb")
   end
